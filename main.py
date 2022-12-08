@@ -2,7 +2,7 @@ import openpyxl
 import json
 
 
-with open ('/json/activities.json') as file
+with open('/json/activities.json') as file:
     data = json.load(file)
 
 book = openpyxl.Workbook()
@@ -12,7 +12,7 @@ sheet['A1'] = 'ID'
 sheet['B1'] = 'CITY'
 sheet['C1'] = 'NUM'
 
-row(2)
+row = 2
 for ssssssample in data['activities']:
     sheet[row][0].value = ssssssample['id']
     sheet[row][1].value = ssssssample['city']
@@ -20,7 +20,6 @@ for ssssssample in data['activities']:
     # sheet[row][3].value = ' '.join(ssssssample['num'])
     # etc
     row += 1
-    print(city, num)
 
 book.save("/xlsx/jsontoexcelexport.xlsx")
 book.close()
