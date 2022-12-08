@@ -18,7 +18,6 @@ for ssssssample in data['activities']:
     sheet[row][1].value = ssssssample['city']
     sheet[row][2].value = ssssssample['num']
     # sheet[row][3].value = ' '.join(ssssssample['num'])
-    # etc
     row += 1
 
 book.save("/xlsx/jsontoexcelexport.xlsx")
